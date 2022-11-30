@@ -119,6 +119,7 @@ export function Avatar<TMessage extends IMessage = IMessage>(
               props.imageStyle && props.imageStyle[props.position],
             ] as ImageStyle
           }
+          textStyle={props.textStyle ? props.textStyle : {}}
           user={props.currentMessage.user}
           onPress={() => props.onPressAvatar?.(props.currentMessage!.user)}
           onLongPress={() =>
