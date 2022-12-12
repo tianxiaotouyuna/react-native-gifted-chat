@@ -12,4 +12,5 @@ module.exports = {
   testMatch: ['**/*.test.ts?(x)'],
   modulePathIgnorePatterns: ['<rootDir>/example'],
   coveragePathIgnorePatterns: ['./src/__tests__/'],
+  //aasssssss123
 }
