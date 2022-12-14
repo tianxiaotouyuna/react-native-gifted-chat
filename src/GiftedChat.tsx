@@ -624,47 +624,51 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   }
 
   onKeyboardWillShow = (e: any) => {
-    this.handleTextInputFocusWhenKeyboardShow()
+    console.log(JSON.stringify(e))
+    // this.handleTextInputFocusWhenKeyboardShow()
 
-    if (this.props.isKeyboardInternallyHandled) {
-      this.setIsTypingDisabled(true)
-      this.setKeyboardHeight(
-        e.endCoordinates ? e.endCoordinates.height : e.end.height,
-      )
-      this.setBottomOffset(this.safeAreaSupport(this.props.bottomOffset))
-      const newMessagesContainerHeight = this.getMessagesContainerHeightWithKeyboard()
-      this.setState({
-        messagesContainerHeight: newMessagesContainerHeight,
-      })
-    }
+    // if (this.props.isKeyboardInternallyHandled) {
+    //   this.setIsTypingDisabled(true)
+    //   this.setKeyboardHeight(
+    //     e.endCoordinates ? e.endCoordinates.height : e.end.height,
+    //   )
+    //   this.setBottomOffset(this.safeAreaSupport(this.props.bottomOffset))
+    //   const newMessagesContainerHeight = this.getMessagesContainerHeightWithKeyboard()
+    //   this.setState({
+    //     messagesContainerHeight: newMessagesContainerHeight,
+    //   })
+    // }
   }
 
   onKeyboardWillHide = (_e: any) => {
-    this.handleTextInputFocusWhenKeyboardHide()
+    console.log(JSON.stringify(_e))
+    // this.handleTextInputFocusWhenKeyboardHide()
 
-    if (this.props.isKeyboardInternallyHandled) {
-      this.setIsTypingDisabled(true)
-      this.setKeyboardHeight(0)
-      this.setBottomOffset(0)
-      const newMessagesContainerHeight = this.getBasicMessagesContainerHeight()
-      this.setState({
-        messagesContainerHeight: newMessagesContainerHeight,
-      })
-    }
+    // if (this.props.isKeyboardInternallyHandled) {
+    //   this.setIsTypingDisabled(true)
+    //   this.setKeyboardHeight(0)
+    //   this.setBottomOffset(0)
+    //   const newMessagesContainerHeight = this.getBasicMessagesContainerHeight()
+    //   this.setState({
+    //     messagesContainerHeight: newMessagesContainerHeight,
+    //   })
+    // }
   }
 
   onKeyboardDidShow = (e: any) => {
-    if (Platform.OS === 'android') {
-      this.onKeyboardWillShow(e)
-    }
-    this.setIsTypingDisabled(false)
+    console.log(JSON.stringify(e))
+    // if (Platform.OS === 'android') {
+    //   this.onKeyboardWillShow(e)
+    // }
+    // this.setIsTypingDisabled(false)
   }
 
   onKeyboardDidHide = (e: any) => {
-    if (Platform.OS === 'android') {
-      this.onKeyboardWillHide(e)
-    }
-    this.setIsTypingDisabled(false)
+    console.log(JSON.stringify(e))
+    // if (Platform.OS === 'android') {
+    //   this.onKeyboardWillHide(e)
+    // }
+    // this.setIsTypingDisabled(false)
   }
 
   scrollToBottom(animated = true) {
